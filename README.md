@@ -79,14 +79,10 @@ mcts.update(iterations=1000)
 mcts.print_tree()
 ```
 
-## Future Improvements
+## Nice Todo
 
-- Add interactive gameplay
-- Implement different board sizes
-- Add visualization of the game board
-- Optimize performance for larger trees
-- Add support for different MCTS variants
+- [] Expand to larger board_sizes
 
 ## License
 
-This project is open source and available under the MIT License. 
+This project is available under the MIT License. 
