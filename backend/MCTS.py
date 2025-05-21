@@ -1,5 +1,5 @@
-from Node import Node
-from TicTacToe import TicTacToe
+from backend.Node import Node
+from backend.TicTacToe import TicTacToe
 from collections import deque
 
 class MCST: 
@@ -15,10 +15,12 @@ class MCST:
         """
         current_node = node
         
-        while not current_node.gameState.is_game_over() and current_node.is_fully_expanded():
-            current_node = current_node.select()
-            if current_node is None:
-                 break
+        # Keep selecting children while the node is not fully expanded
+        while not current_node.gameState.is_game_over() and not current_node.is_fully_expanded():
+            next_node = current_node.select()
+            if next_node is None:
+                break
+            current_node = next_node
         return current_node
 
     def update(self, iterations): 

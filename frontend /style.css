@@ -1,0 +1,130 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 50px;
+    font-family: 'Courier New', Courier, monospace;
+}
+#main-board {
+    margin-left: 20px;
+}
+#guide {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    width: 50%;
+}
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+/* Add to frontend/style.css */
+
+#explanation-area {
+    display: flex; /* Use flexbox for alignment */
+    align-items: flex-start; /* Align items to the top */
+    background-color: #f7f7f7; /* Light background for the box */
+    border: 2px solid #ccc; /* Subtle border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow */
+    max-width: 800px; /* Adjust max width as needed */
+    width: 90%; /* Responsive width */
+    position: relative; /* For speech bubble pointer */
+}
+
+#anime-character-img {
+    width: 120px; /* Larger character image */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits without cropping */
+    margin-right: 20px;
+    border-radius: 5px; /* Slight roundness if not a circle */
+    /* Add some animation for cuteness */
+    transition: transform 0.3s ease-in-out;
+}
+
+#anime-character-img:hover {
+    transform: translateY(-5px); /* Little bounce on hover */
+}
+
+#dialogue-box {
+    flex-grow: 1; /* Allows it to take remaining space */
+    background-color: #fff; /* White background for dialogue */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+#dialogue-box::before { /* Speech bubble pointer */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid #fff; /* White triangle pointing left */
+    left: -19px; /* Position next to the character */
+    top: 20px;
+}
+
+#dialogue-box::after { /* Border for the speech bubble pointer */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-right: 21px solid #ddd; /* Slightly larger border color */
+    left: -21px;
+    top: 19px;
+    z-index: -1; /* Place behind the white triangle */
+}
+
+#character-dialogue {
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 15px; /* Space between dialogue and buttons */
+    white-space: pre-wrap; /* Preserve line breaks if you add them */
+}
+
+#user-prompts {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    justify-content: flex-end; /* Align buttons to the right */
+}
+
+.action-button {
+    background-color: #4CAF50; /* Green color for action buttons */
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease;
+}
+.action-button:hover {
+    background-color: #45a049;
+}
+
+/* Optional: styling for specific button types (e.g., highlight the current one) */
+.action-button.highlight {
+    background-color: #007bff;
+}
+.action-button.highlight:hover {
+    background-color: #0056b3;
+}

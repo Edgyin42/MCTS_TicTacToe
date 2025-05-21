@@ -1,4 +1,4 @@
-from TicTacToe import TicTacToe, PLAYER_X, PLAYER_O, EMPTY_SPOT, DRAW_MARKER
+from backend.TicTacToe import TicTacToe, PLAYER_X, PLAYER_O, EMPTY_SPOT, DRAW_MARKER
 import math
 import random
 
@@ -70,8 +70,8 @@ class Node:
         best_score = -float('inf')
         
         for child in self.children: 
-            score = child.get_UBC()
-            if score > best_UBC: 
+            score = child.get_UBC1()
+            if score > best_score: 
                 best_score = score
                 best_child = child 
         return best_child 
