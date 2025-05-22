@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "autoprefixer": "^10.4.21",
+    "p5": "^2.0.2",
+    "postcss": "^8.5.3",
+    "react-p5": "^1.4.1",
+    "tailwindcss": "^4.1.7"
+  }
+}
